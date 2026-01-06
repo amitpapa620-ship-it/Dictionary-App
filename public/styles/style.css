@@ -1,0 +1,282 @@
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/backgound_image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+   
+}
+.container{
+    
+    width: 550px;
+    
+    /* display: inline-block; */
+    padding: 20px;
+    position: relative;
+    top: 20px;
+    /* GLASSMORPHISM EFFECT */
+    background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+    backdrop-filter: blur(15px); /* This creates the frosted glass look */
+    -webkit-backdrop-filter: blur(15px); /* Safari support */
+    
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    color: #2c1e11;
+    
+   
+}
+h2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    font-size: 2rem;
+}
+.search-bar{
+    width: 80%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #c9a66b;
+    border-radius: 50px;
+}
+input[type=text]{
+    width: 80%;
+    height: 25px;
+    font-size: 1rem;
+    
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+.search-bar:focus-within {
+    box-shadow: 0 0 15px rgba(201, 166, 107, 0.5);
+}
+
+button{
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.word-details{ 
+    display: block;
+    padding: 30px 50px 30px 50px;
+}
+.word-info{
+    
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.word-name{
+    margin-left: 20px; 
+}
+
+#type-txt {
+    font-weight: 900;
+    font-size: 1.8rem;
+    color:  white;
+}
+
+#phonetic-txt {
+    font-size: 1.2rem;
+    color: #5d4037;
+    font-weight: normal;
+}
+.sound-btn .material-symbols-outlined {
+    font-size: 3rem; 
+    color: #5d4037;
+    transition:0.3s;
+}
+.sound-btn:hover .material-symbols-outlined {
+    transform: scale(1.1);
+    color: #422e28;
+}
+.definition{
+   
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin: 5px;
+    padding-left: 10px;
+
+}
+.blockquote h3 {
+    font-size: 1.6rem;
+    border-bottom: 2px solid #c9a66b;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+p{
+    font-size: 1.3rem;  
+    line-height: 1.6;
+    padding-left: 10px;
+    margin: 5px;
+}
+
+/* Night Mode Class */
+body.night-mode {
+    background-image: url('/images/background_image_night_mode.png');
+}
+
+/* Adjust the glass container for better visibility at night */
+body.night-mode .container {
+    background: rgba(0, 0, 0, 0.4); 
+    color: #ffffff;
+    border: 1px solid rgba(191, 139, 139, 0.1);
+}
+
+body.night-mode  #phonetic-txt {
+    color: #d1d1d1;
+}
+
+body.night-mode .sound-btn .material-symbols-outlined {
+    color: #d7ccc8;
+}
+
+/* --- Mobile View Settings --- */
+@media screen and (max-width: 600px) {
+    body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/backgound_image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+   
+    }
+    .container{
+        
+        width: 300px;
+        height: 450px;
+        /* display: inline-block; */
+        padding: 5px;
+        
+        /* GLASSMORPHISM EFFECT */
+        background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+        backdrop-filter: blur(15px); /* This creates the frosted glass look */
+        -webkit-backdrop-filter: blur(15px); /* Safari support */
+        
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 25px;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        color: #2c1e11;
+        
+    
+    }
+    h2{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        font-size: 1.2rem;
+    }
+    .search-bar{
+        width: 80%;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid #c9a66b;
+        border-radius: 50px;
+    }
+    input[type=text]{
+        width: 80%;
+        height: 25px;
+        font-size: .8rem;
+        
+        background: transparent;
+        outline: none;
+        border: none;
+    }
+
+    .search-bar:focus-within {
+        box-shadow: 0 0 15px rgba(201, 166, 107, 0.5);
+    }
+
+    button{
+        background: transparent;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .word-details{ 
+        display: block;
+        padding: 15px 30px 15px 30px;
+    }
+    .word-info{
+        
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .word-name{
+        margin-left: 5px; 
+    }
+
+    #type-txt {
+        font-weight: 900;
+        font-size: 1rem;
+        color:white;
+    }
+
+    #phonetic-txt {
+        font-size: .8rem;
+        color: #5d4037;
+        font-weight: normal;
+    }
+    .sound-btn .material-symbols-outlined {
+        font-size: 1.8rem; 
+        color: #5d4037;
+        transition:0.3s;
+    }
+    .sound-btn:hover .material-symbols-outlined {
+        transform: scale(1.1);
+        color: #422e28;
+    }
+    .definition{
+    
+        font-size: .8rem;
+        line-height: 1;
+        margin: 5px;
+        padding-left: 10px;
+
+    }
+    .blockquote h3 {
+        font-size: 1rem;
+        border-bottom: 2px solid #c9a66b;
+        display: inline-block;
+        margin: 0;
+    }
+    p{
+        font-size: .8rem;  
+        line-height: 1;
+        padding-left: 10px;
+        margin: 5px;
+    }
+
+}

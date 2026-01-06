@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary App</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <!-- google material icon link -->
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    
+    <div class="container">
+        <div class="heading"><h2>Dictionary</h2></div>
+        <form action="/" method="POST" class="search-bar">
+            
+                <input type="text"  name="input" placeholder="Search word...">
+                <button class="search-btn" type="submit">
+                    <span class="material-symbols-outlined">search</span>    
+                </button>
+            
+        </form>
+
+        
+       <% if(locals.data){ %>
+        <div class="word-details">
+            <div class="word-info">
+                <div class="word-name">
+                    <p>
+                        <% if(data.partOfSpeech){ %>
+                        <span id="type-txt"><%= data.partOfSpeech %></span>
+                        <% }if(data.phonetic){ %>
+                        <span id="phonetic-txt"><%= data.phonetic %></span>
+                    </p>
+                </div>
+                <div class="audio">
+                    <% }if(data.Audio){ %>
+                        <audio id="wordAudio" src="<%= data.Audio %>"></audio>
+                    <button class="sound-btn" type="button" onclick="playAudio()">
+                        <span class="material-symbols-outlined">volume_up</span>
+                    </button>
+                    <% } %>
+                </div>
+            </div>
+            
+            <div class="blockquote">
+                <% if(data.Definition){ %>
+                <h3>Definition</h3>
+                <p class="definition"> ☞<%= data.Definition %></p>
+            </div>
+            <div class="blockquote" id="example-element">
+                <% }if(data.Example){ %>
+                <h3>Examples</h3>
+                <p> ☞<%= data.Example %></p>
+            </div>
+            <div class="blockquote" id="synonyms-element">
+                <% }if(data.Synonyms && data.Synonyms.length > 0){ %>
+                <h3>Synonyms</h3>
+                <p> ☞<%= data.Synonyms.join(", ") %></p>
+            </div>
+            <div class="blockquote" id="antonyms-element">
+                <% }if(locals.data.Antonyms && data.Antonyms.length > 0){ %>
+                <h3>Antonyms</h3>
+                <p> ☞<%= data.Antonyms.join(", ") %></p>
+                <% } %>
+            </div>
+        
+        </div>
+       <% }if (locals.error && error !== null) { %>
+           <p class="errortext" style="color: red; text-align: center;"><%= error %></p>
+        <% } %>
+    </div>
+
+    <script src="/theme.js"></script>
+    
+</body>
+</html>
